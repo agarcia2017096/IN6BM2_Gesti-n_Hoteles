@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+
+
+  
+    <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+  
+      <div class="logo row ">
+  
+        <div class="col-6">
+        <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+  
+        </div>
+      </div>
+  
+      <nav id="navbar " class="navbar ">
+        <ul id="navbar">
+          <li class="nav-item"><a class="active " routerLink="/inicio">Inicio</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+          
+          <li class="nav-item"><a routerLink="/hoteles" >Hoteles</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+
+          <li class="nav-item"><a routerLink="/login" >Login</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+
+          <li class="nav-item"><a routerLink="/registro" >Registro</a></li>
+          <li class="nav-item"><a ></a></li>
+
+            <!--<div class="dropdown nav-item mx-5" style="position: relative; z-index: 3" >
+              <button  style="color: whitesmoke;" class="btn dropdown-toggle dd2" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Usuario <i class="bi bi-person-badge"></i>
+              </button>
+              <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+    
+                <div class="justify justify-content-center align-items-center" style="background-color: #222830!important ">
+                  <img src="assets/images/iconoUsuario.png" style="width: 120px;height: 120px">
+  
+                </div>
+    
+                <a class="dropdown-item"  style="color: #222830">
+                  Nombre usuario
+                </a>
+    
+                <div>
+                  <hr class="dropdown-divider">
+                </div>
+    
+                <div class="dropdown-item" style="background-color: #E74C3C">
+                  <a routerLink="/inicio" routerLinkActive="active" class="dropdown-item"
+                    style="background-color: #E74C3C">↤ SALIR</a>
+                </div>
+              </div>
+            </div>-->
+  
+  
+  
+          <!--<li class="dropdown"><a  ><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+  
+  
+  
+            <ul>
+              <li><a  >Drop Down 1</a></li>
+              <li class="dropdown"><a  ><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a  >Deep Drop Down 1</a></li>
+                  <li><a  >Deep Drop Down 2</a></li>
+                  <li><a  >Deep Drop Down 3</a></li>
+                  <li><a  >Deep Drop Down 4</a></li>
+                  <li><a  >Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a  >Drop Down 2</a></li>
+              <li><a  >Drop Down 3</a></li>
+              <li><a  >Drop Down 4</a></li>
+            </ul>
+          </li>-->
+        </ul>
+      </nav>
+  
+    </div>
+  </header><!-- End Header -->
+
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 5;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <i class="bi bi-building"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center text-white" id="navbarNav">
+        <ul class="nav navbar-nav pull-xs-center">
+          <li class="nav-item mx-5 ">
+            <a id="dd" class="nav-link text-white" href="/inicio">Volver <i class="bi bi-arrow-left-short"></i></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center" style="margin-bottom: -6rem;margin-top:-1rem">
+    <div class="container">
+      <div class="row" >
+        <div class="col-lg-6 d-flex flex-column justify-content-center text-dark">
+          <h1 data-aos="fade-up">Reserva tu habitación de diferentes hoteles desde acá</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Es hora de viajar y descubrir los lugares en la lista de tus pendientes</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a routerLink="/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>¡Reservar!</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1 hero-img" data-aos="zoom-out" data-aos-delay="200">
+
+      </div>
+
+        <div class="col-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="./../../../assets/images/iconDefault.png" class="img-fluid" alt="" >
+            <!--<img src="assets/img/hero-img.png" class="img-fluid" alt="">-->
+
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h2 style="color: #ed9146;">Llegó la guía de hoteles Travel Inc 2022</h2>
+              <p style="text-align:justify;">
+                ¿De verdad puedo ahorrar en alojamiento cercano y en otros destinos populares al usar Travel Inc? ¡Claro que sí! Travel Inc busca ofertas de alojamiento en cientos de webs de comparación online para ayudarte a encontrar ofertas de hoteles, propiedades vacacionales y más.
+              </p>
+              <div class="text-justify text-lg-start">    
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values" style="background: rgba(134, 52, 52, 0) url(../../../assets/images/fondoInicio.png) no-repeat center top fixed;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Más información</h2>
+          <p>Bienvenido, encuentra el mejor alojamiento para ti</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="./../../../assets/images/values-1-removebg-preview.png" class="img-fluid" alt="">
+              <h3>Las mejores ofertas</h3>
+              <p>Acá encontrarás diferentes hoteles al mejor precio</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="./../../../assets/images/values-2-removebg-preview.png" class="img-fluid" alt="">
+              <h3>Millones de opiniones</h3>
+              <p>Las opiniones son importantes, acá puedes dejar la tuya</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="./../../../assets/images/values-3-removebg-preview.png" class="img-fluid" alt="">
+              <h3>Alojamiento que se adapta</h3>
+              <p>Nos adoptamos a tus necesidades</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Values Section -->
+
+    
+   <!-- <section id="newsletter" class="newsletter ">
+      <div class="overlay padd-section">
+        <div class="container" data-aos="zoom-in">
+
+          <section id="counts" class="counts" style="margin-top:-2rem; margin-bottom:-2rem;">
+            <div class="container" data-aos="fade-up">
+      
+              <div class="row gy-4">
+      
+                <div class="col-lg-3 col-md-6">
+                  <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <div>
+                      <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                      <p>Clientes satisfechos</p>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-md-6">
+                  <div class="count-box">
+                    <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                    <div>
+                      <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                      <p>Planificación efectiva</p>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-md-6">
+                  <div class="count-box">
+                    <i class="bi bi-headset" style="color: #15be56;"></i>
+                    <div>
+                      <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                      <p>Soporte constante</p>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-md-6">
+                  <div class="count-box">
+                    <i class="bi bi-people" style="color: #bb0841;"></i>
+                    <div>
+                      <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                      <p>Equipo comprometido</p>
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+      
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>End Newsletter Section -->
+
+
+    <!-- ======= Counts Section ======= -->
+    <div style="background-image: linear-gradient(to bottom, #F39C12  , #CF6714);height: 1vh;"></div>
+
+    <section id="counts" class="counts" style="padding-top:2rem; padding-bottom:2rem;background-color: #1e232b;" >
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Clientes satisfechos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Planificación efectiva</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-headset" style="color: #15be56;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Soporte constante</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-people" style="color: #bb0841;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Equipo comprometido</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+    <div style="background-image: linear-gradient(to bottom, #F39C12  , #CF6714);height: 1vh;"></div>
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" style="background: rgba(134, 52, 52, 0) url(../../../assets/images/fondoInicio.png) no-repeat center top fixed;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Destinos</h2>
+          <p>Aquí encontrarás diferentes lugares</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <img src="assets/img/features.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Cuidad de Guatemala</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>CDMX</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Paris</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Ginebra</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Roma</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>San Salvador</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> <!-- / row -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a  class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>Travel inc</span>
+            </a>
+            <p>Una agencia de hoteles donde encontrarás todos los hoteles al mejor precio y al menor tiempo posible.</p>
+            <div class="social-links mt-3">
+              <a  class="twitter"><i class="bi bi-twitter"></i></a>
+              <a  class="facebook"><i class="bi bi-facebook"></i></a>
+              <a  class="instagram"><i class="bi bi-instagram"></i></a>
+              <a  class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Integrantes</h4>
+            <ul>
+              <li><a href="#">Gabriel Melgar</a></li>
+              <li><a href="#">Alejandro Garcia</a></li>
+              <li><a href="#">Diego Patzan</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Nuestros servicios</h4>
+            <ul>
+              <li><a href="#">Seguridad</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Confianza</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contactanos</h4>
+            <p>
+              Colonia Landivar <br>
+              Cuidad De Guatemala, zona 7<br>
+              Guatemala <br><br>
+              <strong>Telefono:</strong> +502 43314235<br>
+              <strong>Email:</strong> grupo6@gmail.com
+
+              <br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Travel Inc</span></strong>. Todos los derechos reservados
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a  class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+</body>
+
+</html>

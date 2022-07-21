@@ -1,0 +1,263 @@
+<!--ALEJANDRO GARCIA-->
+<!-- ======= Header ======= -->\
+
+<header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+  
+    <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+  
+      <div class="logo row ">
+  
+        <div class="col-6">
+        <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+  
+        </div>
+      </div>
+  
+      <nav id="navbar " class="navbar ">
+        <ul id="navbar">
+          <li class="nav-item"><a class="active " style="text-decoration: none;">Hoteles</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+  
+          <li class="nav-item"><a routerLink="/inicio"  style="text-decoration: none;">  Inicio</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+  
+
+    
+      
+        </ul>
+      </nav>
+  
+    </div>
+  </header>
+  
+  
+  
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-centent-center align-items-center" style="background-color: #1e232b">
+  
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h1 style="color: #fff" class="animate__animated animate__fadeInDown titleCar" >Gestión de <span>Hoteles</span></h1>
+          <p  class="animate__animated animate__fadeInUp paragraph">El objetivo principal con la administración de hoteles es brindar a los clientes la posibilidad de ofrecer un servicio de alta calidad, conservando las instalaciones impecables y de este modo garantizar una experiencia agradable.</p>
+          <!--<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>-->
+        </div>
+      </div>
+  
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2  class="animate__animated animate__fadeInDown titleCar">Control  e  información  detallada</h2>
+          <p    class="animate__animated animate__fadeInUp paragraph">Detalles específicos de cada hotel, así como de los eventos organizados y la disponibilidad para adminitrar los servicios</p>
+          <!--<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>-->
+        </div>
+      </div>
+  
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2  style="color: #fff"  class="animate__animated animate__fadeInDown titleCar">Adminitración y reservaciones</h2>
+          <p   class="animate__animated animate__fadeInUp paragraph">Control según las prioridades y preferencias del cliente para brindar la mejor experiencia en cada servicio.</p>
+          <!--<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>-->
+        </div>
+      </div>
+  
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+  
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+  
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </section><!-- End Hero -->
+  
+  <section class="dark" style="margin-top:-5rem;margin-bottom: -1rem;padding-bottom: -10rem;">
+      <div class="container py-4">
+          <h1 class="h1 text-center" id="pageHeaderTitle">HOTELES EN EL PAÍS</h1>
+  
+      <div class="row">
+        <div class="col-8">
+        </div>
+        <div class="col-4">
+          <div class="input-group">
+            <input   [(ngModel)]="search" type="text" class="form-control" placeholder="Busqueda de hotel" aria-label="Text input with segmented dropdown button">
+            <button style="color: white;border-color: gray;" type="button" class="btn "><i class="bi bi-search"></i> Buscar</button>
+      
+          </div> 
+        </div>
+    
+        </div>
+  
+      <!--<div class="row">
+        <div class="col-3 col-sm-3">
+         <a id="botomOptionsAdd" class="btn btn-light btn-block text-black" data-bs-toggle="modal" data-bs-target="#addModal">
+           <h6>
+             <i  class="bi bi-plus-circle-dotted"></i> Agregar Hoteles
+           </h6>
+         </a>
+       </div>
+   
+      </div>--><br>
+  
+      <article   *ngFor="let hotel of hotelesModelGet | search: search;let i = index" class="postcard dark" [ngClass]="coloresDinamicos[i]">
+              <a class="postcard__img_link"  >
+                  <img class="postcard__img" src="/assets/images/iconCard1.jpg" alt="Image Title" />
+              </a>
+  
+              <div class="postcard__text">
+                  <h1 class="postcard__title red"><a  > {{hotel.nombreHotel}}</a></h1>
+                  <div class="postcard__subtitle small">
+                      <time datetime="2022-05-25 12:00:00">
+                          <i class="fas fa-calendar-alt mr-2"></i>Martes, 22 de marzo del 2022
+                      </time>
+                  </div>
+                  <div class="postcard__bar"></div>
+                  <div class="postcard__preview-txt">
+            <i class="bi bi-building"></i> Dirección:  {{hotel.direccion}}  <br><br>
+            <i class="bi bi-telephone"></i>  Teléfono: {{hotel.telefono}}<br><br>
+            <i class="bi bi-journal-check"></i> Descripción: {{hotel.descripcion}}<br><br>
+  
+          </div>
+          <ul class="postcard__tagbox">
+            <ul class="postcard__tagbox">
+              <li class="tag__item play blue "   >
+                <button type="button" (click)="informacionHoteles()" routerLinkActive="active" class="btn text-light">
+                  <i class="bi bi-clipboard2-data"></i> Más información</button>
+              </li>
+            </ul>
+            
+                  </ul>
+              </div>
+          </article>
+  
+      </div>
+  
+  </section> 
+  
+  
+    <!-- ======= Services Section ======= -->
+    <section class="services" id="backgroudCards">
+      <div class="container" >
+  
+        <div class="container">
+    
+          <div class="section-title">
+            <h2 style="color: #1e232b;" >Generalidades del servicio</h2>
+          </div>
+        </div>
+  
+        <div class="row" >
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" >
+            <div class="icon-box icon-box-pink" style="border-width: 2.3px; border-radius: 2px;">
+              <div class="icon"><i class="bi bi-bookmark-star-fill"></i></div>
+              <h4 style="font-size: 1.4rem !important" class="title"><a href="">Reservaciones</a></h4>
+              <p class="description">Puede revisar la disponibilidad de su visita y disfrutar de la mejor experiencia según sus preferencias. 
+              </p>
+            </div>
+          </div>
+  
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch"  data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan" style="border-width: 2.3px; border-radius: 2px;" >
+              <div class="icon"><i class="bi bi-calendar-event-fill"></i></div>
+              <h4 style="font-size: 1.4rem !important"class="title"><a href="">Eventos</a></h4>
+              <p class="description">Programación de actividades al aire libre en las intalaciones para aprovechar al máximo su estadía.</p>
+            </div>
+          </div>
+  
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch"  data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green" style="border-width: 2.3px; border-radius: 2px;" >
+              <div class="icon"><i class="bi bi-clipboard2-check-fill"></i></div>
+              <h4 style="font-size: 1.4rem !important" class="title"><a href="">Servicios</a></h4>
+              <p class="description">Altos estándares de calidad para brindar a los clientes la mejor experiencia en el hotel a elección.</p>
+            </div>
+          </div>
+  
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch"  data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue" style="border-width: 2.3px; border-radius: 2px;" >
+              <div class="icon"><i class="bi bi-capslock-fill"></i></div>
+              <h4 style="font-size: 1.4rem !important" class="title"><a href="">Detalles</a></h4>
+              <p class="description">Planificación y dinamismo para brindar la mejor convivencia posible durante sus vacaciones.</p>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </section><!-- End Services Section -->
+  
+    <section id="contact" class="contact justify-content-center alight-item center" style="background-color: #1e232b;padding-top:2rem" >
+      <div class="container">
+    
+        <div class="section-title">
+          <h2 style="color: #fff;" >Ubicación Ciudad de Guatemala</h2>
+          <p style="color: #fff;" >Visualización del mapa para la ubicación de los hoteles y así tener una mejor orientación...</p>
+        </div>
+      </div>
+    
+      <div style="background-image: linear-gradient(to bottom, #F39C12  , #CF6714);height: 2vh;"></div>
+    
+      <div  style="background-color:#CF6714;">
+        <div class="mapouter col-12"><div class="gmap_canvas">
+          <iframe width="100%" height="406" id="gmap_canvas" src="https://maps.google.com/maps?q=Ciudad%20de%20Guatemala%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:406px;width:100%;}</style><a href="https://www.embedgooglemap.net">google map plugin html</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:406px;width:100%;}</style></div>
+        </div>
+      </div>
+    
+      <div style="  background-image: linear-gradient(to top, #F39C12  , #CF6714);height: 2vh;"></div>
+    
+      <hr>
+    
+    </section>
+  
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200" id="fondo" style="margin-bottom: 1.6rem;">
+      <div class="container">
+  
+        <div class="row" >
+          <div class="col-lg-6 video-box" >
+            <img src="../../../assets/images/slide-2.jpg" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=MzxFYAze1aU" target="_blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+  
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-4">
+  
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-ui-checks"></i></div>
+              <h4 class="title"><a >MÁXIMA CALIDAD</a></h4>
+              <p style="text-align:justify;" class="description">Las habitaciones están agrupadas en módulos con áreas verdes al rededor. Brindando la mejor disponibilidad según sus preferencias y con un diseño coloneal. </p>
+            </div>
+  
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person-video2"></i></div>
+              <h4 class="title"><a >SERVICIO ESPECIALIZADO</a></h4>
+              <p style="text-align:justify;" class="description">Servicio al cliente con altos estándares de calidad, brindando un área agradable para descansar y relajarse. Además, puede optar a  promociones según su estadía en el hotel.</p>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+    </section><!-- End Why Us Section -->
+  
+  
+  
+  
+  <app-footer></app-footer>
+  
+  

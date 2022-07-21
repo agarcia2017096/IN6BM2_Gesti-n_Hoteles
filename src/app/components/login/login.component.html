@@ -1,0 +1,186 @@
+
+      
+    <header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+
+
+  
+      <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+    
+        <div class="logo row ">
+    
+          <div class="col-6">
+          <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+    
+          </div>
+        </div>
+    
+        <nav id="navbar " class="navbar ">
+          <ul id="navbar">
+            <li class="nav-item"><a class="active " style="text-decoration: none;">Login</a></li>
+            <li class="nav-item"><a ></a></li>
+            <li class="nav-item"><a ></a></li>
+  
+            <li class="nav-item"><a routerLink="/inicio" style="text-decoration: none;"> <i class="bi bi-arrow-left"> </i>  Volver</a></li>
+            <li class="nav-item"><a ></a></li>
+            <li class="nav-item"><a ></a></li>
+  
+  
+        
+          </ul>
+        </nav>
+    
+      </div>
+    </header>
+  
+  
+  <nav id="navbar " class="navbar ">
+        <ul id="navbar">
+          <li class="nav-item"><a class="active ">Login</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+
+          <li class="nav-item"><a  routerLink="/inicio" > <i class="bi bi-arrow-left"></i> Volver</a></li>
+          <li class="nav-item"><a ></a></li>
+          <li class="nav-item"><a ></a></li>
+
+
+        </ul>
+      </nav>
+  
+  <section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            #3c616c 15%,
+            #3C616C 35%,
+            #3c616c79 75%,
+            #3c616c2f 80%,
+            transparent 100%);
+      }
+  
+      #radius-shape-1 {
+        height: 220px;
+        width: 220px;
+        top: -60px;
+        left: -130px;
+        background: radial-gradient(#f1d7b2, #f1e8b250);
+        overflow: hidden;
+      }
+  
+      #radius-shape-2 {
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+        bottom: -60px;
+        right: -110px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(#F1E8B2, #f1e8b216);
+        overflow: hidden;
+      }
+  
+      .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+    </style>
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(222, 100%, 98%)">
+            ¡Reserva con nosotros,<br />
+            <span style="color: hsl(218, 81%, 75%)">somos tu mejor opción!</span>
+          </h1>
+          
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card " style="background-color: #fafdfefe !important;">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form #registerForm="ngForm" class="align-items-center">
+
+                <div class="text-center mb-3">
+                  <i class="fas fa-cubes fa-2x me-3" style="color: #222830;"></i>
+                  <span class="h1 fw-bold mb-0">Inicie sesión</span>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example17">Usuario:</label>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span style="background-color: rgb(247, 238, 236)"class="input-group-text" id="basic-addon1" class="form-control form-control-lg">@</span>
+                    </div>
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" name="usuario" #usuario="ngModel"
+                    [(ngModel)]="usuarioModel.usuario" required>                      
+                  </div>
+
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example27">Contraseña:</label>
+                  <input type="password" id="form2Example27" class="form-control form-control-lg"  name="password" #password="ngModel"
+                  [(ngModel)]="usuarioModel.password" required>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example27">Confirmar Contraseña:</label>
+                  <input type="password" id="form2Example27" class="form-control form-control-lg"  name="repeatPass" 
+                  [(ngModel)]="repeatPass" required>                    
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-2">
+                  <input ngModel name="terminos" class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required/>
+                  <label class="form-check-label" for="form2Example3">
+                    Estoy de acuerdo con los <a > <b>Términos del servicio</b></a>
+                  </label>
+                </div>
+
+                <div class="text-center mb-3">
+                  <button [disabled]="!registerForm.form.valid" id="boton" class="btn btn-dark btn-lg btn-block" type="button"  
+                  routerLinkActive="active" (click)="checkPass()">Login</button>
+                </div>
+
+                <div id="textoI" class="text-center mb-3">
+                  <p>Inicia sesión con:</p>
+                  <button id="ini" type="button" class="btn btn-dark btn-floating mx-2">
+                    <a style="text-decoration: none;color:white" href="https://www.facebook.com" target="_blank" ><i class="bi bi-facebook"></i></a> 
+                  </button>
+
+                  <button id="ini" type="button" class="btn btn-dark btn-floating mx-2">
+                    <a style="text-decoration: none;color:white" href="https://accounts.google.com/" target="_blank" ><i class="bi bi-google"></i></a> 
+
+                    
+                  </button>
+
+                  <button id="ini" type="button" class="btn btn-dark btn-floating mx-1">
+                    <a style="text-decoration: none;color:white" href="https://twitter.com/" target="_blank" ><i class="bi bi-twitter"></i></a> 
+                  </button>
+
+                  <button id="ini" type="button" class="btn btn-dark btn-floating mx-1">
+                    <a style="text-decoration: none;color:white" href="https://github.com/" target="_blank" ><i class="bi bi-github"></i></a> 
+                  </button>
+                </div>
+                
+                <p  style="color: #393f81;margin-bottom: 0px;"x>¿No tiene una cuenta? <a id="registrar"
+                    style="color: #393f81;text-decoration: none"  routerLink="/registro" routerLinkActive="active">Registrate acá</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,33 @@
+<!--GABRIEL MELGAR -->
+
+<header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+  
+  <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+
+    <div class="logo row ">
+
+      <div class="col-6">
+      <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+
+      </div>
+    </div>
+
+    <nav id="navbar " class="navbar ">
+      <ul id="navbar">
+        <li class="nav-item" ><a class="active " style="text-decoration: none;">Información de Hotel</a></li>
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_ADMINISTRADOR'"><a routerLink="/dash-board" style="text-decoration: none;"> <i class="bi bi-arrow-left"></i> Volver</a></li>
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_ADMINISTRADOR_HOTEL'"><a [routerLink="/admin/empresas/"+ idHotel] style="text-decoration: none;"> <i class="bi bi-arrow-left"></i> Volver</a></li>
+
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+
+
+    
+      </ul>
+    </nav>
+
+  </div>
+</header>

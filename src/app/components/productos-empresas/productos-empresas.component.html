@@ -1,0 +1,411 @@
+<header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+  
+  <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+
+    <div class="logo row ">
+
+      <div class="col-6">
+      <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+
+      </div>
+    </div>
+
+    <nav id="navbar " class="navbar ">
+      <ul id="navbar">
+        <li class="nav-item"><a class="active " style="text-decoration: none;">Detalles de cuenta</a></li>
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_ADMINISTRADOR_HOTEL'"><a [routerLink]="['/admin/hoteles/', identidad.idHotel]"routerLink="/dash-board" style="text-decoration: none;"> <i class="bi bi-arrow-left"> </i>  Volver</a></li>
+
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_CLIENTE'"><a [routerLink]="['/usuario/dash-board/', identidad._id]"routerLink="/dash-board" style="text-decoration: none;"> <i class="bi bi-arrow-left"> </i>  Volver</a></li>
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+
+
+    
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+<div class="py-4"></div>
+
+    
+<!-- Credit card form -->
+<section *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_ADMINISTRADOR_HOTEL'" id="fondoFact" style="background-color: #222830;">
+  <br><br>
+  <div class="row " >
+    <div class="col-md-8 mb-4">
+      <div class="card" >
+        <div class="card-body" style="background-color: #f8fbff;">
+          <div class="container mb-5 mt-3">
+            <div class="row d-flex align-items-baseline" >
+              <div class="col-xl-5 float-end">
+                <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
+                    class="fas fa-print text-primary"></i><i class="bi bi-receipt"></i> Detalles de reservaciones</a>
+
+              </div>
+              <hr>
+            </div>
+      
+            <div class="container">
+              <div class="col-md-12">
+                <div class="text-center">
+                  <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
+                  <h1 class="pt-0"><i  class="bi bi-journal-bookmark-fill"></i> Reservaciones del Hotel</h1><br>
+                </div>
+      
+              </div>
+      
+      
+              <div class="row ">
+                <div class="col-xl-8">
+                  <ul class="list-unstyled">
+                    <li class="text-black"><i class="bi bi-person-bounding-box"></i> Usuario: <span style="color:#1197e4 ;">{{this.identidad.nombre }} {{this.identidad.apellido }}</span></li>
+                    <li class="text"><i class="bi bi-geo-fill"></i> {{this.identidad.direccion}}</li>
+                    <li class="text"><i class="bi bi-telephone-fill"></i> {{this.identidad.telefono}}</li>
+                  </ul>
+                </div>
+                <div class="col-xl-4">
+                  <ul class="list-unstyled">
+
+                    <li class="text" ><i class="bi bi-check2-circle" style="color:#1197e4 ;"></i> <span
+                        class="fw-bold">Fecha: </span> 2022</li>
+
+                  </ul>
+                </div>
+              </div>
+      
+              <div class="row my-2 mx-1 justify-content-center">
+                <table class="table table-striped table-borderless">
+                  <thead style="background-color:#181c23 ;" class="text-white">
+                    <tr>
+                      <th scope="col" >Descripción</th>
+                      <th scope="col" class=" text-center">Cantidad</th>
+                      <th scope="col" class="text-center">Precio unitario</th>
+                      <th scope="col" class=" text-center">Subtotal</th>
+                      <th scope="col" class=" text-center">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let registro of RegistroModelGet">
+                      <td >{{registro.nombreCompra}} </td>
+                      <td class=" text-center">{{registro.cantidad}}</td>
+                      <td class=" text-center">Q.{{registro.precio}}</td>
+                      <td class=" text-center">Q.{{registro.subTotal}}</td>
+                      <td class="col-md-3 text-center"><button (click)="deleteRegistro(registro.nombreCompra)" id="botomOptionsEdit" style="background-color: #3C616C ;" type="button"
+                        class="btn btn-primary col-3">
+                        <i class="bi bi-trash-fill"></i>
+                      </button></td>
+                    </tr>
+                  </tbody>
+      
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-xl-8">
+                  <p class="ms-3">Información de todas las reservaciones</p>
+      
+                </div>
+                <div class="col-xl-3">
+                  <ul class="list-unstyled">
+                  </ul>
+                  <p class="text-black float-start"><span class="text-black me-3"> Total ingreso</span><span
+                      style="font-size: 25px;">Q.{{precioTotal}}</span></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xl-10">
+                  <p>Gracias por mantener el control adecuado de TRAVEL INC</p>
+                </div>
+                <div class="col-xl-2">
+
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 " >
+      <div class="card mb-4 d-flex justify-content-center" style="background-color: #f3f6fa;">
+        <div class="card-header py-3" style="background-image: linear-gradient(to bottom, #ef9d19  , #f0852ee4)">
+          <h5 class="mb-0">Ingresos del Hotel</h5>
+        </div>
+        <div class="card-body" style="background-color: #f6faff!important" >
+          <ul class="list-group list-group-flush">
+            <li style="background-color: #f6faff;" class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+              Ingresos actuales
+              <span>Q.{{precioTotal}}</span>
+            </li>
+            <li style="background-color: #f6faff;" class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+              <div>
+                <strong>Ingresos</strong>
+              </div>
+              <span><strong>Q.{{precioTotal}}</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container py-2 " >
+        <div class="row d-flex justify-content-center">
+          <div class="card mb-4"  style="background-color: transparent;">
+            <div class="card rounded-3" style="background-color: #f6faff;">
+              <div class="card-header py-3" style="background-image: linear-gradient(to bottom, #ef9d19  , #f0852ee4)">
+                <div class="d-flex align-items-center" >
+                  <div>
+                    <i class="fab fa-cc-visa fa-4x text-black pe-3"></i>
+                  </div>
+                  <div >
+                    <p class="d-flex flex-column mb-0">
+                      <b><i class="bi bi-credit-card"></i> Encargado: {{this.identidad.nombre }} {{this.identidad.apellido }} </b>
+                    </p>
+                  </div>
+                </div>              
+              </div>
+              <div class="card-body mx-1 my-2" >
+    
+                <div class="pt-3">
+                  <div class="d-flex flex-row pb-3">
+                    <div class="rounded border border-success border-2 d-flex w-100 p-3 align-items-center"
+                      style="background-color: rgba(18, 241, 122, 0.07);">
+                      <div class="d-flex align-items-center pe-3">
+          
+                      </div>
+                      <div class="d-flex flex-column">
+                        <p class="mb-1 small text-black">Ingreso calculado</p>
+                        <h6 class="mb-0 text-black">Q.{{precioTotal}}</h6>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex flex-row pb-3">
+                    <div class="rounded border d-flex w-100 px-3 py-2 align-items-center">
+                      <div class="d-flex align-items-center pe-3">
+            
+                      </div>
+                      <div class="d-flex flex-column py-1">
+                        <p class="mb-1 small text-black">Ingreso + Ganancia estipulada (+5%)</p>
+                        <div class="d-flex flex-row align-items-center">
+                          <h6 class="mb-0 text-black pe-1"></h6>
+                          <h6 class="mb-0 text-black">Q.{{precioTotal5}}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class=" row d-flex flex-row align-items-center">
+                  <div class="col-8"></div>
+                  <button (click)="clicPagado()" type="button" class="btn btn-primary text-capitalize col-4"
+                    style="background-color:#181c23 ;">Confirmación</button>               
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div><br>
+
+</section>
+
+<!-- Credit card form -->
+<section *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_CLIENTE'" id="fondoFact" style="background-color: #222830;">
+  <br><br>
+  <div class="row " >
+    <div class="col-md-8 mb-4">
+      <div class="card" >
+        <div class="card-body" style="background-color: #f8fbff;">
+          <div class="container mb-5 mt-3">
+            <div class="row d-flex align-items-baseline" >
+              <div class="col-xl-9">
+                <p style="color: #565c64;font-size: 20px;"> <strong>Facturación</strong></p>
+              </div>
+              <div class="col-xl-3 float-end">
+                <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
+                    class="fas fa-print text-primary"></i><i class="bi bi-receipt"></i> Detalle de cuenta</a>
+
+              </div>
+              <hr>
+            </div>
+      
+            <div class="container">
+              <div class="col-md-12">
+                <div class="text-center">
+                  <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
+                  <h1 class="pt-0"><i  class="bi bi-journal-bookmark-fill"></i> Gestión de Hoteles</h1><br>
+                </div>
+      
+              </div>
+      
+      
+              <div class="row ">
+                <div class="col-xl-8">
+                  <ul class="list-unstyled">
+                    <li class="text-black"><i class="bi bi-person-bounding-box"></i> Usuario: <span style="color:#1197e4 ;">{{this.identidad.nombre }} {{this.identidad.apellido }}</span></li>
+                    <li class="text"><i class="bi bi-geo-fill"></i> {{this.identidad.direccion}}</li>
+                    <li class="text"><i class="bi bi-telephone-fill"></i> {{this.identidad.telefono}}</li>
+                  </ul>
+                </div>
+                <div class="col-xl-4">
+                  <ul class="list-unstyled">
+
+                    <li class="text" ><i class="bi bi-check2-circle" style="color:#1197e4 ;"></i> <span
+                        class="fw-bold">Fecha: </span> 2022</li>
+
+                  </ul>
+                </div>
+              </div>
+      
+              <div class="row my-2 mx-1 justify-content-center">
+                <table class="table table-striped table-borderless">
+                  <thead style="background-color:#181c23 ;" class="text-white">
+                    <tr>
+                      <th scope="col">Descripción</th>
+                      <th scope="col" class=" text-center">Cantidad</th>
+                      <th scope="col" class=" text-center">Precio unitario</th>
+                      <th scope="col" class=" text-center">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let registro of RegistroModelGet">
+                      <td>{{registro.nombreCompra}} </td>
+                      <td class=" text-center">{{registro.cantidad}}</td>
+                      <td class=" text-center">Q.{{registro.precio}}</td>
+                      <td class=" text-center">Q.{{registro.subTotal}}</td>
+
+                    </tr>
+                  </tbody>
+      
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-xl-8">
+                  <p class="ms-3">Información de la compra</p>
+      
+                </div>
+                <div class="col-xl-3">
+                  <ul class="list-unstyled">
+                  </ul>
+                  <p class="text-black float-start"><span class="text-black me-3"> Total a pagar</span><span
+                      style="font-size: 25px;">Q.{{precioTotal}}</span></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xl-10">
+                  <p>Gracias por preferir nuestro servicio</p>
+                </div>
+                <div class="col-xl-2">
+
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 " >
+      <div class="card mb-4 d-flex justify-content-center" style="background-color: #f3f6fa;">
+        <div class="card-header py-3" style="background-image: linear-gradient(to bottom, #ef9d19  , #f0852ee4)">
+          <h5 class="mb-0">Factura del cliente</h5>
+        </div>
+        <div class="card-body" style="background-color: #f6faff!important" >
+          <ul class="list-group list-group-flush">
+            <li style="background-color: #f6faff;" class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+              Subtotal actual
+              <span>Q.{{precioTotal}}</span>
+            </li>
+            <li style="background-color: #f6faff;" class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+              <div>
+                <strong>Total a pagar</strong>
+              </div>
+              <span><strong>Q.{{precioTotal}}</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container py-2 " >
+        <div class="row d-flex justify-content-center">
+          <div class="card mb-4"  style="background-color: transparent;">
+            <div class="card rounded-3" style="background-color: #f6faff;">
+              <div class="card-header py-3" style="background-image: linear-gradient(to bottom, #ef9d19  , #f0852ee4)">
+                <div class="d-flex align-items-center" >
+                  <div>
+                    <i class="fab fa-cc-visa fa-4x text-black pe-3"></i>
+                  </div>
+                  <div >
+                    <p class="d-flex flex-column mb-0">
+                      <b><i class="bi bi-credit-card"></i> {{this.identidad.nombre }} {{this.identidad.apellido }} </b><span class="small text-muted" style="color: whitesmoke !important;">**** 8880</span>
+                    </p>
+                  </div>
+                </div>              
+              </div>
+              <div class="card-body mx-1 my-2" >
+    
+                <div class="pt-3">
+                  <div class="d-flex flex-row pb-3">
+                    <div class="rounded border border-success border-2 d-flex w-100 p-3 align-items-center"
+                      style="background-color: rgba(18, 241, 122, 0.07);">
+                      <div class="d-flex align-items-center pe-3">
+                        <input class="form-check-input" type="radio" name="radioNoLabelX" id="radioNoLabel11"
+                          value="" aria-label="..." checked />
+                      </div>
+                      <div class="d-flex flex-column">
+                        <p class="mb-1 small text-black">Pago con tarjeta</p>
+                        <h6 class="mb-0 text-black">Q.{{precioTotal}}</h6>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex flex-row pb-3">
+                    <div class="rounded border d-flex w-100 px-3 py-2 align-items-center">
+                      <div class="d-flex align-items-center pe-3">
+                        <input class="form-check-input" type="radio" name="radioNoLabelX" id="radioNoLabel22"
+                          value="" aria-label="..." />
+                      </div>
+                      <div class="d-flex flex-column py-1">
+                        <p class="mb-1 small text-black">Pago en efectivo (+5%)</p>
+                        <div class="d-flex flex-row align-items-center">
+                          <h6 class="mb-0 text-black pe-1"></h6>
+                          <h6 class="mb-0 text-black">Q.{{precioTotal5}}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class=" row d-flex flex-row align-items-center">
+                  <div class="col-8"></div>
+                  <button (click)="clicPagado()" type="button" class="btn btn-primary text-capitalize col-4"
+                    style="background-color:#181c23 ;">Facturación</button>               
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div><br>
+
+</section>
+<!-- Credit card form -->
+<br>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,170 @@
+<header  id="header" class="fixed-top d-flex align-items-center navbar navbar-dark bg-dark " >
+
+
+  
+  <div class=" collapse navbar-collapse container d-flex justify-content-between align-items-center" >
+
+    <div class="logo row ">
+
+      <div class="col-6">
+      <h1  class="text-light"><a ><span id="navTitle"><i class="bi bi-filter-left" style="font-size:2rem"></i> TRAVEL INC</span></a></h1>
+
+      </div>
+    </div>
+
+    <nav id="navbar " class="navbar ">
+      <ul id="navbar">
+        <li class="nav-item"><a class="active " style="text-decoration: none;">Editar perfil</a></li>
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_CLIENTE'"><a [routerLink]="['/usuario/dash-board/', identidad._id]"routerLink="/dash-board" style="text-decoration: none;"> <i class="bi bi-arrow-left"> </i>  Volver</a></li>
+        <li class="nav-item" *ngIf="_usuarioService.obtenerIdentidad().rol === 'ROL_ADMINISTRADOR_HOTEL'"><a [routerLink]="['/admin/hoteles/', identidad.idHotel]"routerLink="/dash-board" style="text-decoration: none;"> <i class="bi bi-arrow-left"> </i>  Volver</a></li>
+
+        <li class="nav-item"><a ></a></li>
+        <li class="nav-item"><a ></a></li>
+
+
+    
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+
+<section id="fondoFact" style="background-color: #222830;">
+  <div class="container py-5">
+    <div class="row" >
+      <div class="col" >
+
+        <nav aria-label="breadcrumb" class=" rounded-3 p-3 mb-4"  style="background-image: linear-gradient(to bottom, #f5a421  , #d47221)">
+
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="./../../../assets/images/iconoUsuario.png" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{ _usuarioService.obtenerIdentidad().nombre }} {{ _usuarioService.obtenerIdentidad().apellido }} </h5>
+            <p class="text-muted mb-1">@{{ _usuarioService.obtenerIdentidad().usuario }}</p>
+            <p class="text-muted mb-4">Usuario de Travel Inc</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button [(disabled)]="!editarUser.form.valid" type="button" id="boton" class="btn btn-primary" (click)="putUser()">Guardar</button>
+              <button type="button" class="btn btn-outline-danger ms-1" (click)="deleteUser()">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <label class="form-label" for="form3Example8">   <i class="bi bi-chat-right-text-fill"></i> Descripción extra:</label>  
+
+            <div class="row justify-content-center ">
+              <div class="col-11">
+                <textarea [(ngModel)]="empresaModelId.descripcion" id="inputDescripcion" name="descripcion" #descripcion="ngModel" class="form-control form-control-lg"  rows="4"></textarea>
+                <br>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <form #editarUser="ngForm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0"> <i class="bi bi-person-badge"></i> Nombre de usuario:</p>
+                </div>
+                <div class="col-sm-9">
+                  <input name="nombre" #nombre="ngModel" [(ngModel)]="empresaModelId.nombre" required type="text"  id="form2Example27" class="form-control"  style="border: 0px solid">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0"><i class="bi bi-person-check-fill"></i> Apellido:</p>
+                </div>
+                <div class="col-sm-9">
+                  <input name="apellido" #apellido="ngModel" [(ngModel)]="empresaModelId.apellido" required type="text" id="form2Example27" class="form-control"  style="border: 0px solid" >
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0"><i class="bi bi-telephone-fill"></i> Teléfono:</p>
+                </div>
+                <div class="col-sm-9">
+                  
+                  <input pattern="^[0-9]{8}$" name="telefono" #telefono="ngModel" [(ngModel)]="empresaModelId.telefono" type="telefono" id="form2Example27" class="form-control"  style="border: 0px solid" >
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0"> <i class="bi bi-geo-alt-fill"></i> Dirección:</p>
+                </div>
+                <div class="col-sm-9">
+                  <input name="direccion" #direccion="ngModel" [(ngModel)]="empresaModelId.direccion" type="text" id="form2Example27" class="form-control" style="border: 0px solid">
+                </div>
+              </div>
+              <hr>
+            </div>
+          </form>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <p class="mb-4"><span class="text font-italic me-1"  style="color: #2153c9" >Estadísticas: </span> Usuario activo
+                </p>
+                <p class="mb-1" style="font-size: .77rem;">Inicio de sesión</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Búsqueda de hoteles</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 72%" aria-valuenow="72"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Reservaciones</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 89%" aria-valuenow="89"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Uso de servicios</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+
+                  <img src="./../../../assets/images/about.jpg" class="card-img-top" width="10rem" alt="...">
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
